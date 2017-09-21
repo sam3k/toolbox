@@ -53,6 +53,54 @@ cp .vimrc ~/.vimrc
 vim +PluginInstall +qall (execute from the terminal. not from inside vim)
 ```
 
+# Useful Commands
+## iTerm2
+### Split Pane Horizontally
+```bash
+Cmd + d
+```
+
+### Split Pane Vertically
+```bash
+Cmd + Shift + d
+```
+
+### Move Between Panes
+```bash
+Command + [
+Command + ]
+```
+
+### Pane Fullscreen
+```bash
+Cmd + Shift + Enter
+```
+
+## VIM
+### Open File in Nerdtree as a Tab
+```bash
+Shift + t
+```
+
+### Toggle Nerdtree tabs
+```bash
+gt
+```
+
+### Open Nerdtree
+```bash
+Ctrl + n
+```
+
+### Toggle Nerdtree Focus
+```bash
+Ctrl + w + w
+```
+
+### Find Var/Func Definition/Origin
+```bash
+gd
+```
 
 # TODO:
 - [ ] copy ~/.oh-myzsh
