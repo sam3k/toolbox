@@ -34,7 +34,7 @@ cp .bash_profile ~/.bash_profile
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 ```
 
-#Install Vundle for VIM
+## Install Vundle for VIM
 ```bash
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
