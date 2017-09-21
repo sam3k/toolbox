@@ -1,4 +1,7 @@
 # Installation
+```bash
+./install.sh
+```
 ## Install iTerm2
 * Download iTerm [here](https://www.iterm2.com/downloads.html)
 * Launch iTerm2
