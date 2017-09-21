@@ -1,4 +1,5 @@
 # Installation
+This one line script will eventually replace most of the manual install listed right below. 
 ```bash
 ./install.sh
 ```
