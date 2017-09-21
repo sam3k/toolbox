@@ -15,7 +15,22 @@ export DEFAULT_USER=`whoami`  # force username of OS on powerline
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel9k/powerlevel9k"
+
+# Make sure to copy/paste the fonts in iterm2/Awesome Terminal Fonts (Patched)/* to the font book
+POWERLEVEL9K_MODE='awesome-patched'
+
+# Change powerline background & foreground colors. 
+# Run in shell to see all colors:
+# for code ({000..255}) print -P -- "$code: %F{$code}This is how your text would look like%f"
+POWERLEVEL9K_DIR_HOME_BACKGROUND='011'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='011'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='011'
+
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='011'
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='012'
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='007'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
