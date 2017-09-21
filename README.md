@@ -56,51 +56,33 @@ vim +PluginInstall +qall (execute from the terminal. not from inside vim)
 # Useful Commands
 ## iTerm2
 ### Split Pane Horizontally
-```bash
-Cmd + d
-```
+<kbd>Cmd</kbd>+<kbd>d</kbd>
 
 ### Split Pane Vertically
-```bash
-Cmd + Shift + d
-```
+<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>d</kbd>
 
 ### Move Between Panes
-```bash
-Command + [
-Command + ]
-```
+<kbd>Cmd</kbd>+<kbd>[</kbd> to move to the left pane
+<kbd>Cmd</kbd>+<kbd>]</kbd> to move to the right pane
 
 ### Pane Fullscreen
-```bash
-Cmd + Shift + Enter
-```
+<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>d</kbd>
 
 ## VIM
 ### Open File in Nerdtree as a Tab
-```bash
-Shift + t
-```
+<kbd>Shift</kbd>+<kbd>t</kbd>
 
 ### Toggle Nerdtree tabs
-```bash
-gt
-```
+<kbd>g</kbd>+<kbd>t</kbd>
 
 ### Open Nerdtree
-```bash
-Ctrl + n
-```
+<kbd>Ctrl</kbd>+<kbd>n</kbd>
 
 ### Toggle Nerdtree Focus
-```bash
-Ctrl + w + w
-```
+<kbd>Ctrl</kbd>+<kbd>w</kbd>+<kbd>w</kbd>
 
 ### Find Var/Func Definition/Origin
-```bash
-gd
-```
+<kbd>g</kbd>+<kbd>d</kbd>
 
 # TODO:
 - [ ] copy ~/.oh-myzsh
