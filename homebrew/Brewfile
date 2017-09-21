@@ -1,0 +1,7 @@
+tap "homebrew/bundle"
+tap "homebrew/core"
+brew "yarn", args: ["without-node"]
+brew "nvm"
+brew "zsh"
+brew "zsh-completions"
+brew "tmux"
