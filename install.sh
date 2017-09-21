@@ -1,8 +1,12 @@
 #!/bin/sh
 
 # Install Homebrew
-echo "Installing Homebrew..."
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if ! [ -x "$(command -v brew)" ]; then
+  echo "Installing Homebrew..."
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  echo "Homebrew is already installed."
+fi
 
 # Install Homebrew Bundles
 echo "Installing Homebrew bundles..."
@@ -10,8 +14,8 @@ brew bundle
 
 
 # Copy bash profile if none found
-echo "Creating Bash profile..."
 if [ ! -f ~/.bash_profile ]; then
+  echo "Creating Bash profile..."
   cp .bash_profile ~/.bash_profile
   . ~/.bash_profile
 else
@@ -20,8 +24,8 @@ fi
 
 
 # Configure Tmux
-echo "Configuring Tmux...."
 if [ ! -f ~/.tmux.conf ]; then
+  echo "Configuring Tmux...."
   cp tmux/.tmux.conf ~/.tmux.conf
 else
   echo "~/.tmux.conf already exists. Copy extra settings in toolbox/tmux/.tmux.conf manually."
@@ -29,8 +33,8 @@ fi
 
 
 # Configure Zsh
-echo "Configuring Zsh...."
 if [ ! -f ~/.zshrc ]; then
+  echo "Configuring Zsh...."
   cp zsh/.zshrc ~/.zshrc
 else
   echo "~/.zshrc already exists. Copy extra settings in toolbox/tmux/.tmux.conf manually."
@@ -43,8 +47,8 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 
 
 # Configure Vim
-echo "Configuring Vim...."
 if [ ! -f ~/.vimrc ]; then
+  echo "Configuring Vim...."
   cp vim/.vimrc ~/.vimrc
 else
   echo "~/.vimrc already exists. Copy extra settings in toolbox/tmux/.tmux.conf manually."
