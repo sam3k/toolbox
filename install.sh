@@ -13,9 +13,17 @@ fi
 echo "Installing Homebrew Bundle..."
 brew tap Homebrew/bundle
 
+
 # Install Homebrew Bundles
 echo "Installing Homebrew bundles..."
 brew bundle
+
+
+# Configure iTerm2
+echo "Configuring iTerm2..."
+defaults delete com.googlecode.iterm2
+cp iterm/com.googlecode.iterm2.plist ~/Library/Preferences/
+defaults read -app iTerm
 
 
 # Copy bash profile if none found
