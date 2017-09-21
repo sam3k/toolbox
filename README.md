@@ -18,6 +18,7 @@ Note: might need to install the Homebrew Bundler manually before running the nex
 
 ## Install Brew Bundles
 This will install NVM, Yarn, Zsh, Zsh Completions, etc
+
 ```bash
 brew bundle
 ```
@@ -29,13 +30,18 @@ cp .bash_profile ~/.bash_profile
 ```
 
 ## Install Oh My ZSH
+```bash
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+```
 
 #Install Vundle for VIM
+```bash
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
 
 ## Configure Tmux
 Open vim ~/.tmux.conf and add
+
 ```bash
 > set -g default-terminal "screen-256color"
 ```
