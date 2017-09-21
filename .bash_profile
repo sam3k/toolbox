@@ -11,4 +11,6 @@ export SHELL="/bin/zsh"
 
 
 alias ts="cd /Users/samuel.roldan/Projects/thestreet"
-alias ll="ls -la"
+alias ll='ls -laGf'
+alias top="vtop --theme acid"
+alias oldtop="/usr/bin/top"

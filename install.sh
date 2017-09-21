@@ -8,6 +8,11 @@ else
   echo "Homebrew is already installed."
 fi
 
+
+# Install Homebrew Bundle
+echo "Installing Homebrew Bundle..."
+brew tap Homebrew/bundle
+
 # Install Homebrew Bundles
 echo "Installing Homebrew bundles..."
 brew bundle
@@ -32,6 +37,16 @@ else
 fi
 
 
+# Install Oh-My-Zsh
+echo "Installing Oh-My-Zsh..."
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+
+# Install Powerline Theme
+echo "Installing Powerline Theme..."
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+
+
 # Configure Zsh
 if [ ! -f ~/.zshrc ]; then
   echo "Configuring Zsh...."
@@ -39,11 +54,6 @@ if [ ! -f ~/.zshrc ]; then
 else
   echo "~/.zshrc already exists. Copy extra settings in toolbox/tmux/.tmux.conf manually."
 fi
-
-
-# Install Oh-My-Zsh
-echo "Installing Oh-My-Zsh..."
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 
 # Configure Vim
@@ -59,4 +69,9 @@ fi
 echo "Installing Vundle..."
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+
+
+# Install Vtop
+echo "Installing Vtop..."
+npm install -g vtop
 
