@@ -1,6 +1,7 @@
 tap "caskroom/cask"
 tap "homebrew/core"
 cask "iterm2"
+cask "java"
 brew "yarn", args: ["without-node"]
 brew "nvm"
 brew "zsh"

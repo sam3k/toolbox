@@ -83,3 +83,13 @@ vim +PluginInstall +qall
 echo "Installing Vtop..."
 npm install -g vtop
 
+# Mac Configurations (Optional)
+## Change Home/End keys to emulate IBM keyboard. [ref: https://tinyurl.com/ybqfobm2]
+if [ ! -f ~/Library/KeyBindings/DefaultKeyBinding.dict ]; then
+  echo "Modifying Mac Default Keyboard Bindings..."
+  cp os/KeyBindings/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
+else
+  echo "DefaultKeyBinding.dict already exists. Copy extra settings in toolbox/os/DefaultKeyBinding.dict manually."
+fi
+
+
