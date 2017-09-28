@@ -12,6 +12,10 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugin load sample
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'pangloss/vim-javascript'
+Plugin 'Quramy/vim-js-pretty-template'
+Plugin 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,46 +40,49 @@ set bs=2
 set ts=4
 set sw=4
 set number
-" shows row and column number at bottom right corner
-set ruler
+set ruler                         " shows row and column number at bottom right corner
+
+
+let &titlestring = @%
+set title
 
 
 " Audio
-set noerrorbells      " don't beep
+set noerrorbells                  " don't beep
+
 " Indenting
-filetype plugin indent on   " indenting intelligence based on file type
-set autoindent              " copy indent to new line
+filetype plugin indent on         " indenting intelligence based on file type
+set autoindent                    " copy indent to new line
+
 " Editing
-set backspace=indent,eol,start " can erase past chars, autoindent, and newlines
-" disable automatic comment insertion
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+set backspace=indent,eol,start    " can erase past chars, autoindent, and newlines
 
 " Extra information
-set laststatus=2      " for airline plugin
-set number            " show line numbers
-set ruler             " show row and column at bottom right
-set showcmd           " show info about the current command
-set noshowmode        " don't show --INSERT-- at bottom; unneeded with airline
-set title             " file name in title bar
-set visualbell        " flash command on error
+set laststatus=2                  " for airline plugin
+set number                        " show line numbers
+set ruler                         " show row and column at bottom right
+set showcmd                       " show info about the current command
+set noshowmode                    " don't show --INSERT-- at bottom; unneeded with airline
+set title                         " file name in title bar
+set visualbell                    " flash command on error
 
 " Search
-set hlsearch          " highlight search matches
-set ignorecase        " case insensitive
-set incsearch         " incremental search highlighting
-set smartcase         " only case insensitive when the search is all lowercase
+set hlsearch                      " highlight search matches
+set ignorecase                    " case insensitive
+set incsearch                     " incremental search highlighting
+set smartcase                     " only case insensitive when the search is all lowercase
 
 " Spacing
-set expandtab         " tabs are expanded into spaces
-set tabstop=4         " number of spaces for tab
-set shiftwidth=4      " number of spaces for indentation
-set softtabstop=4     " number of spaces for tab in insert mode
+set tabstop=2                     " number of spaces for tab
+set shiftwidth=2                  " number of spaces for indentation
+set expandtab                     " tabs are expanded into spaces
+set softtabstop=2                 " number of spaces for tab in insert mode
 
-" For solarized plugin (color scheme)
-" https://github.com/altercation/vim-colors-solarized
+" Theme
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme solarized             " For solarized plugin (color scheme) https://github.com/altercation/vim-colors-solarized
+
 
 
 " Uncomment the following to have Vim jump to the last position when
@@ -91,3 +98,35 @@ autocmd StdinReadPre * let s:std_in=1                                           
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif                              " Automatically open tree view if no file chosen
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif    " Close VIM if only nerd tree is open
 " <<<<< Nerdtree configuration ends
+
+
+" Syntastic Linter config begins >>>>
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint src'  " point eslint to your local node_modules if eslint wasn't installed globally
+let g:syntastic_javascript_eslint_exec='/bin/ls'
+let g:syntastic_javascript_eslint_generic = 1
+let g:syntastic_javascript_eslint_args = '-f compact'
+" <<< Syntastic Linter config ends
+
+
+" Plugin:vim-js-pretty-template (String Template) begins >>>
+autocmd FileType javascript JsPreTmpl html
+" <<<<Plugin:vim-js-pretty-template (String Template) ends 
+
+
+" Plugin:vim-jsx config begins >>>
+let g:jsx_ext_required = 0            " Works on files other than .jsx
+" <<< Plugin:vim-jsx config ends
+
+" Plugin:vim-javascript config begins >>>
+let g:javascript_plugin_jsdoc = 1     " Enables syntax highlighting for JSDocs
+hi def link jsObjectKey String        " Colorize Object keys. See: syntax/javascript.vim#L261
+" <<< Plugin:vim-javascript config ends
+
