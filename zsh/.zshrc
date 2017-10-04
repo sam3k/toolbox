@@ -4,9 +4,6 @@
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
-alias ll="ls -la"
-alias ts="cd /Users/samuel.roldan/Projects/thestreet"
-
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/samuel.roldan/.oh-my-zsh
 
@@ -106,3 +103,21 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+# load the .bash_profile settings(aliases, function, export $PATH, ...)
+# bash -l  #do not use anymore, just don't use bash_profile moving forward.
+# Settings found there have been migrated to the bottom of this file (must be loaded last)
+
+
+# settings that used to be in ~/.bash_profile
+unset LSCOLORS
+export CLICOLOR=1
+export CLICOLOR_FORCE=1
+
+alias toolbox="cd /Users/samuel.roldan/Projects/toolbox"
+alias ts="cd /Users/samuel.roldan/Projects/thestreet"
+alias ll='ls -laGf'
+alias top="vtop --theme acid"
+alias oldtop="/usr/bin/top"
+alias vinstall="vim +PluginInstall +qall"
