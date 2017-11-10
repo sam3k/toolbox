@@ -64,6 +64,10 @@ vim +PluginInstall +qall (execute from the terminal. not from inside vim)
 ```
 
 # Useful Commands
+## Search with FZF (fuzzy finder)
+### Toggle Search
+<kbd>Ctl</kbd> t
+
 ## iTerm2
 ### Split Pane Horizontally
 <kbd>Cmd</kbd>+<kbd>d</kbd>
@@ -78,7 +82,61 @@ vim +PluginInstall +qall (execute from the terminal. not from inside vim)
 ### Pane Fullscreen
 <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>d</kbd>
 
+## ZSH/OH-MY-ZSH
+### find and open file by name anywhere in the tree directory
+```bash
+vi **/News.js
+```
+
+## CD with fuzzy matching
+Say that you have the following structure in your current directory: toolbox/iterm/docs.
+You can type shorthands and they will get auto completed after pressing <kbd>TAB</kbd>
+```bash
+cd tool/term/doc
+```
+
+## List every file in the current dir or below in a variety of ways
+```bash
+ls src/**/
+ls src/**/*.js
+```
+
+## Expand environment variables
+This will expand your env var 
+```bash
+$PATH <kbd>Tab</kbd>
+```
+
+## Search and Kill Processes
+You can start typing kill and then name of process and Zsh will give you a list of possible
+processes to kill and their respective PID. 
+```bash
+kill nod<kbd>Tab</kbd>
+```
+
+## List Help Manual after starting to type a command
+Say you wanted to invoke the Help guide for `ls`
+```bash
+ls -<kbd>Tab</kbd>
+```
+
+## List Git shortcuts created by Zsh
+```bash
+alias | grep git
+```
+
 ## VIM
+Read more about cool stuff we can do in VIM here:
+* [https://statico.github.io/vim3.html](Vim after 15 Years)
+
+### Search for files using Fizz Fuzz Finder (fzf)
+<kbd>,t</kbd>
+This will open up the search at the bottom of the screen. Simply start searching.
+
+### Search buffers (files currently loaded in memory)
+<kbd>;</kbd>
+This will open up the search at the bottom of the screen. Simply start searching.
+
 ### Open File in Nerdtree as a Tab
 <kbd>Shift</kbd>+<kbd>t</kbd>
 
@@ -93,6 +151,43 @@ vim +PluginInstall +qall (execute from the terminal. not from inside vim)
 
 ### Find Var/Func Definition/Origin
 <kbd>g</kbd>+<kbd>d</kbd>
+
+## Bashmarks' Directory Bookmarks
+Please note that you need to make sure bashmarks.sh has been patch with the local copy of
+bashmarks.sh which adds two new functions: `_d` and `bashmarks` as there were name
+collisions when used within oh-my-zsh
+
+### print bashmarks help/options
+```bash
+bashmarks
+```
+
+### Save a New Directory
+```bash
+cd /directory/to/bookmark/my_project
+s my_proj
+```
+
+### Go to Bookmark Directory
+```bash
+g my_proj
+```
+
+### Show Directory Path to a Bookmark Name
+```bash
+p my_proj
+```
+
+### List Bookmarks
+```bash
+_l
+```
+
+### Delete Bookmark
+```bash
+_d my_proj
+```
+
 
 # TODO:
 - [ ] copy ~/.oh-myzsh

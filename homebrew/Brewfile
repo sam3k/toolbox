@@ -1,5 +1,6 @@
 tap "caskroom/cask"
 tap "homebrew/core"
+tap alexandregz/MXhomebrew
 cask "iterm2"
 cask "java"
 brew "yarn", args: ["without-node"]
@@ -7,3 +8,5 @@ brew "nvm"
 brew "zsh"
 brew "zsh-completions"
 brew "tmux"
+brew "bashmarks"
+brew "fzf"

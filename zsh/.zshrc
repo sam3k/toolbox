@@ -71,10 +71,10 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='007'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git, web-search, osx)
 
 source $ZSH/oh-my-zsh.sh
-
+source /usr/local/opt/bashmarks/libexec/bashmarks.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -115,8 +115,9 @@ unset LSCOLORS
 export CLICOLOR=1
 export CLICOLOR_FORCE=1
 
-alias toolbox="cd /Users/samuel.roldan/Projects/toolbox"
-alias ts="cd /Users/samuel.roldan/Projects/thestreet"
+alias finder="ofd"                                          # oh-my-zsh > plugin > osx > open in Finder  =_)
+# alias toolbox="cd /Users/samuel.roldan/Projects/toolbox"
+# alias ts="cd /Users/samuel.roldan/Projects/thestreet"
 alias ll='ls -laGf'
 alias top="vtop --theme acid"
 alias oldtop="/usr/bin/top"
