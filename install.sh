@@ -81,7 +81,12 @@ vim +PluginInstall +qall
 
 # Install Vtop
 echo "Installing Vtop..."
-npm install -g vtop
+yarn global add vtop
+
+
+# Install PM2
+echo "Installing PM2..."
+yarn global add pm2@latest
 
 # Mac Configurations (Optional)
 ## Change Home/End keys to emulate IBM keyboard. [ref: https://tinyurl.com/ybqfobm2]
@@ -93,3 +98,6 @@ else
 fi
 
 
+# Fuzzy search plugin "fzf"
+# To install useful key bindings and fuzzy completion
+$(brew --prefix)/opt/fzf/install
