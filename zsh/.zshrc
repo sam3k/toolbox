@@ -122,3 +122,32 @@ alias ll='ls -laGf'
 alias top="vtop --theme acid"
 alias oldtop="/usr/bin/top"
 alias vinstall="vim +PluginInstall +qall"
+alias codeCountJs="find './src' -name '*.js' -not -path './node_modules/*' | xargs wc -l"
+
+
+# usage:
+#   codeCount '.' 'js' './node_modules/*'
+#   codeCount './src' 'js'
+function codeCount() {
+	if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+    echo ""
+		echo "Usage:"
+		echo "  $ codeCount <starting_path> <file_type> <exclude_dir>"
+    echo ""
+		echo "Examples:"
+		echo "  $ codeCount '.' 'js' './node_modules/*'"
+		echo "  $ codeCount './src' 'js'"
+    echo ""
+		return
+	fi
+
+  [ ! -z "$1" ] && dir="$1" || dir='.' # directory to search in
+  [ ! -z "$2" ] && fileType="'*.$2'" || fileType='*.js' # file format
+  [ ! -z "$3" ] && excludeDir="-not -path '$3'" || excludeDir="" # directory to exclude
+
+  find_exe="find $dir -name $fileType $excludeDir | xargs wc -l"
+
+  eval $find_exe
+}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
