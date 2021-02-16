@@ -1,12 +1,9 @@
-tap "caskroom/cask"
+tap "homebrew/cask"
 tap "homebrew/core"
-tap alexandregz/MXhomebrew
-cask "iterm2"
-cask "java"
-brew "yarn", args: ["without-node"]
+# tap "alexandregz/MXhomebrew" no longer works
+# cask "iterm2"
 brew "nvm"
 brew "zsh"
 brew "zsh-completions"
 brew "tmux"
-brew "bashmarks"
 brew "fzf"

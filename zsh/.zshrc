@@ -1,3 +1,6 @@
+# force username of OS on powerline
+export DEFAULT_USER=$(whoami)
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -5,9 +8,8 @@ export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/samuel.roldan/.oh-my-zsh
+export ZSH=/Users/$DEFAULT_USER/.oh-my-zsh
 
-export DEFAULT_USER=`whoami`  # force username of OS on powerline
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -71,43 +73,10 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='007'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, web-search, osx)
+plugins=(git web-search osx)
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/opt/bashmarks/libexec/bashmarks.sh
 # User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
-# load the .bash_profile settings(aliases, function, export $PATH, ...)
-# bash -l  #do not use anymore, just don't use bash_profile moving forward.
-# Settings found there have been migrated to the bottom of this file (must be loaded last)
 
 
 # settings that used to be in ~/.bash_profile
@@ -116,38 +85,11 @@ export CLICOLOR=1
 export CLICOLOR_FORCE=1
 
 alias finder="ofd"                                          # oh-my-zsh > plugin > osx > open in Finder  =_)
-# alias toolbox="cd /Users/samuel.roldan/Projects/toolbox"
-# alias ts="cd /Users/samuel.roldan/Projects/thestreet"
 alias ll='ls -laGf'
 alias top="vtop --theme acid"
 alias oldtop="/usr/bin/top"
 alias vinstall="vim +PluginInstall +qall"
-alias codeCountJs="find './src' -name '*.js' -not -path './node_modules/*' | xargs wc -l"
+alias p="cd ~/Projects"
 
 
-# usage:
-#   codeCount '.' 'js' './node_modules/*'
-#   codeCount './src' 'js'
-function codeCount() {
-	if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-    echo ""
-		echo "Usage:"
-		echo "  $ codeCount <starting_path> <file_type> <exclude_dir>"
-    echo ""
-		echo "Examples:"
-		echo "  $ codeCount '.' 'js' './node_modules/*'"
-		echo "  $ codeCount './src' 'js'"
-    echo ""
-		return
-	fi
-
-  [ ! -z "$1" ] && dir="$1" || dir='.' # directory to search in
-  [ ! -z "$2" ] && fileType="'*.$2'" || fileType='*.js' # file format
-  [ ! -z "$3" ] && excludeDir="-not -path '$3'" || excludeDir="" # directory to exclude
-
-  find_exe="find $dir -name $fileType $excludeDir | xargs wc -l"
-
-  eval $find_exe
-}
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

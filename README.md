@@ -8,7 +8,7 @@ This one line script will eventually replace most of the manual install listed r
 * Launch iTerm2
 * Copy/paste iterm/Meslo Slashed/ fonts into your system font directory
 * In iTerm2 go to Preferences > Profiles > Text > Font > Change Font and change to:
-  * Meslo LG S Regular for Powerline
+  * SourceCodePro Powerline Awesome Regular
   * 14 pt font size
 * Go to Preferences and check "Load preferences from a custom folder or URL"
 * Click "Browse" next to the checkbox above and load the plist in this repo: iterm2/com.googlecode.iterm2.plist
