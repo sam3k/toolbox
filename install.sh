@@ -28,10 +28,10 @@ brew bundle --verbose --file homebrew/Brewfile
 
 
 # Configure iTerm2
-echo "${bold}Configuring iTerm2...${unbold}"
-defaults delete com.googlecode.iterm2
-cp iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/
-defaults read -app iTerm
+# echo "${bold}Configuring iTerm2...${unbold}"
+# defaults delete com.googlecode.iterm2
+# cp iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/
+# defaults read -app iTerm
 
 
 # Copy bash profile if none found
@@ -117,9 +117,25 @@ echo "${bold}Installing Vundle...${unbold}"
 vim +PluginInstall +qall
 
 
+# Install Node
+if ! [ -x "$(command -v npm)" ]; then
+  echo "${bold}Installing Node... (Untested)${unbold}"
+  nvm install node
+else
+  echo "Node already installed"
+fi
+
+# Install React Native CLI
+echo "${bold}Installing React Native CLI${unbold}"
+npx react-native
+
 # Install Vtop
-echo "${bold}Installing Vtop...${unbold}"
-npm install -g vtop
+if ! [ -x "$(command -v vtop)" ]; then
+  echo "${bold}Installing Vtop...${unbold}"
+  npm install -g vtop
+else
+  echo "Vtop already installed"
+fi
 
 
 # Install PM2

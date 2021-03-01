@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "966221878711bfb290a48708875b643f015d8f46"
+        "revision": "894c454c1a6d4613d0e67811da0e3edbc0219138"
       },
       "homebrew/core": {
-        "revision": "b10f945561da3154f6b0525a518a5215e08d2de7"
+        "revision": "2fe5a9fb1b3a92d99366bc59005a2d0844ec1464"
       }
     },
     "cask": {
@@ -13,6 +13,12 @@
         "version": "3.4.4",
         "options": {
           "full_name": "iterm2"
+        }
+      },
+      "visual-studio-code": {
+        "version": "1.53.2",
+        "options": {
+          "full_name": "visual-studio-code"
         }
       }
     },
@@ -121,9 +127,9 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.0.1",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "b10f945561da3154f6b0525a518a5215e08d2de7",
+        "Homebrew/homebrew-core": "2fe5a9fb1b3a92d99366bc59005a2d0844ec1464",
         "CLT": "12.4.0.0.1.1610135815",
-        "Xcode": "12.0",
+        "Xcode": "12.4",
         "macOS": "11.2.1"
       }
     }

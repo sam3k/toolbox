@@ -4,6 +4,7 @@ This one line script will eventually replace most of the manual install listed r
 ./install.sh
 ```
 ## Install iTerm2
+* Install Xcode first
 * Download iTerm [here](https://www.iterm2.com/downloads.html)
 * Launch iTerm2
 * Copy/paste iterm/Meslo Slashed/ fonts into your system font directory
