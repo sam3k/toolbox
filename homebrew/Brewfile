@@ -1,7 +1,6 @@
 tap "homebrew/cask"
 tap "homebrew/core"
-# tap "alexandregz/MXhomebrew" no longer works
-# cask "iterm2"
+cask "iterm2"
 cask "visual-studio-code"
 brew "nvm"
 brew "zsh"

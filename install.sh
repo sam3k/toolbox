@@ -3,28 +3,45 @@
 bold=$(tput bold)
 unbold=$(tput sgr0)
 
+# Function to set iTerm "Default" Profile.
+# Same as going to Preferences > Profiles > Colors > Colors Presets
+# https://coderwall.com/p/s-2_nw/change-iterm2-color-profile-from-the-cli
+it2prof() {
+  echo -e "\033]50;SetProfile=$1\a"
+}
+
+# Set iTerm2 Color Palette to Solarized
+if [[ $TERM_PROGRAM = "iTerm.app" ]]; then
+  echo "${bold}Setting Solarized theme on iTerm2...${unbold}"
+
+  # If first time running this script; most likely, iTerm is not installed.
+  # Create DynamicProfiles folder
+  # if [ ! -d "~/Library/Application\ Support/iTerm2" ]; then  
+    # mkdir ~/Library/Application\ Support/iTerm2
+    # mkdir ~/Library/Application\ Support/iTerm2/DynamicProfiles/
+  # else
+    # echo "hello"
+  # fi
+
+  # Copy "ALL" profiles JSON to Dynamic profiles
+  # If I ever want to update the "ANY" profile, go to Profiles > Actions > Export ALL Profiles
+  # Ref: https://stackoverflow.com/a/56821180
+  cp iterm2/sam3k-profiles.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/
+
+  # Execute profiles "sam3k". sam3k is the "Name" in sam3k-profiles.json
+  sleep 5
+  ll ~/Library/Application\ Support/iTerm2/DynamicProfiles/
+  it2prof Sam3k
+else
+  echo "iTerm not detected"
+fi
+
 # Copy Fonts
 echo "${bold}Copying fonts...${unbold}"
 cp -rf fonts/. ~/Library/Fonts/
 
 
-# Install Homebrew
-if ! [ -x "$(command -v brew)" ]; then
-  echo "${bold}Installing Homebrew...${unbold}"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-else
-  echo "Homebrew is already installed."
-fi
 
-
-# Install Homebrew Bundle
-# echo "Installing Homebrew Bundle..."
-# brew tap homebrew/Bundle
-
-
-# Install Homebrew Bundles
-echo "${bold}Installing Homebrew bundles...${unbold}"
-brew bundle --verbose --file homebrew/Brewfile
 
 
 # Configure iTerm2
@@ -53,7 +70,7 @@ brew bundle --verbose --file homebrew/Brewfile
 # fi
 
 # Install Oh-My-Zsh
-if [ ! ~/.oh-my-zsh ]; then
+if [ ! -d "~/.oh-my-zsh" ]; then
   echo "${bold}Installing Oh-My-Zsh...${unbold}"
   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 else
@@ -64,6 +81,7 @@ fi
 if [ ! ~/.oh-my-zsh/custom/themes/powerlevel9k ]; then
   echo "${bold}Installing Powerline Theme...${unbold}"
   git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+  echo 'source ~/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme'  >> ~/.zshrc
 else
   echo "${bold}Powerline already installed.${unbold}"
 fi
@@ -88,7 +106,15 @@ if [ ! -f ~/.vimrc ]; then
   echo "${bold}Configuring Vim....${unbold}"
   cp vim/.vimrc ~/.vimrc
 else
-  echo "~/.vimrc already exists. Copy extra settings in toolbox/tmux/.tmux.conf manually."
+  echo "~/.vimrc already exists."
+fi
+
+# If .vim folder does not exist, create it
+if [ ! -f ~/.vim ]; then
+  echo "${bold}Create Vim folder...${unbold}"
+  mkdir ~/.vim
+else
+  echo "Vim folder already exist."
 fi
 
 # If .vim folder does not have a colors folder, create it so we can paste the solarized theme
@@ -164,3 +190,4 @@ brew info nvm
 
 # Restart to load ZSH
 zsh
+
