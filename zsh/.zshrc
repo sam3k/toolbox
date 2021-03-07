@@ -11,6 +11,7 @@ export DEFAULT_USER=$(whoami)
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Load NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -32,6 +33,11 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Pyenv init
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -48,12 +54,13 @@ unset LSCOLORS
 export CLICOLOR=1
 export CLICOLOR_FORCE=1
 
-alias finder="ofd"                                          # oh-my-zsh > plugin > osx > open in Finder  =_)
+alias o="open ."                                  # oh-my-zsh > plugin > osx > open in Finder  =_)
 alias ll='ls -laGf'
 alias top="vtop --theme acid"
 alias oldtop="/usr/bin/top"
 alias vinstall="vim +PluginInstall +qall"
 alias p="cd ~/Projects"
+alias t="cd ~/Projects/toolbox"
 
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

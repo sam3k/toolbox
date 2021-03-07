@@ -32,7 +32,8 @@ echo "${bold}Copying fonts...${unbold}"
 cp -r fonts/. ~/Library/Fonts/
 
 
-
+# code --list-extensions | xargs -L 1 echo code --install-extension
+# https://stackoverflow.com/questions/35368889/how-to-export-settings/64035356#64035356
 
 
 # Configure iTerm2
