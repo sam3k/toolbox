@@ -24,10 +24,13 @@ export ZSH=/Users/$DEFAULT_USER/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="agnoster"
+ZSH_CUSTOM=/usr/local/opt # make sure it matches powerline source below
 ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
 # Activate Powerlevel10k
+# This path is where Homebrew stores plugins; therefore
+# ZSH_CUSTOM above must match the following path
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

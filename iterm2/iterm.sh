@@ -48,7 +48,7 @@ function iterm () {
     osascript <<EOF
 tell application "iTerm"
 	activate
-	set new_window to (create window with default profile)
+  set new_window to (create window with default profile)
 	set cSession to current session of new_window
 	tell new_window
 		tell cSession

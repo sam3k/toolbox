@@ -11,4 +11,3 @@ brew "tmux"
 brew "fzf"
 brew "watchman"                                 # Required for React Native
 brew "cocoapods"                                # Xcode must be installed first. Required for React Native
-brew "romkatv/powerlevel10k/powerlevel10k"      # powerlevel10k https://github.com/romkatv/powerlevel10k#oh-my-zsh
