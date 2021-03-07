@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "44b0066fc8e770b191dd00d2ca8f2be341f1fe50"
+        "revision": "4150aab2315283dff536282e388ffbd614f9c222"
       },
       "homebrew/core": {
-        "revision": "a2cade940ebd47ae8aa85c57e22aa9215bc82062"
+        "revision": "c9c43f4aea018a6b896a89226face2ba83f8a068"
       }
     },
     "cask": {
@@ -177,6 +177,10 @@
             }
           }
         }
+      },
+      "romkatv/powerlevel10k/powerlevel10k": {
+        "version": "1.14.6",
+        "bottle": false
       }
     }
   },
@@ -193,7 +197,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "3.0.4",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "a2cade940ebd47ae8aa85c57e22aa9215bc82062",
+        "Homebrew/homebrew-core": "c9c43f4aea018a6b896a89226face2ba83f8a068",
         "CLT": "12.4.0.0.1.1610135815",
         "Xcode": "12.4",
         "macOS": "10.15.7"

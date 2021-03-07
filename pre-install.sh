@@ -8,6 +8,13 @@
 bold=$(tput bold)
 unbold=$(tput sgr0)
 
+# Install Powerline10k Configuration (Must happen before installing Powerline10k)
+if [ ! ~/.p10k.zsh ]; then
+  echo "${bold}Installing Powerline10k Configuration...${unbold}"
+  cp zsh/.p10k.zsh ~/.p10k.zsh
+else
+  echo "${bold}Powerline10k configuration already installed.${unbold}"
+fi
 
 # Install Homebrew
 if ! [ -x "$(command -v brew)" ]; then

@@ -38,11 +38,11 @@ then
 
     # Uninstall Fonts
     echo " ✓ Removing fonts..."
-    rm -rf "fonts/Awesome Terminal Fonts (Patched)"
-    rm -rf "fonts/Meslo Slashed"
-    rm "fonts/SourceCodePro+Powerline+Awesome+Regular.ttf"
-    rm "fonts/SourceCodeVariable-Italic.otf"
-    rm "fonts/SourceCodeVariable-Roman.otf"
+    rm -rf "~/Library/Fonts/Awesome Terminal Fonts (Patched)"
+    rm -rf "~/Library/Fonts/Meslo Slashed"
+    rm "~/Library/Fonts/SourceCodePro+Powerline+Awesome+Regular.ttf"
+    rm "~/Library/Fonts/SourceCodeVariable-Italic.otf"
+    rm "~/Library/Fonts/SourceCodeVariable-Roman.otf"
 
 
     # Uninstall Homebrew + Hombrew Packages
@@ -56,8 +56,13 @@ then
     fi
 
     if [ "/Applications/iTerm.app" ]; then
-      echo "Removing iTerm2 app if stuck there..."
-      rm /Applications/iTerm.app
+      echo "Removing iTerm2 app from applications folder..."
+      rm -rf /Applications/iTerm.app
+    fi
+
+    if [ "/Applications/Visual Studio Code.app" ]; then
+      echo "Removing VS Code app from applications folder..."
+      rm -rf /Applications/Visual\ Studio\ Code.app
     fi
 fi
 

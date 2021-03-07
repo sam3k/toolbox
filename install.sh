@@ -14,15 +14,6 @@ it2prof() {
 if [[ $TERM_PROGRAM = "iTerm.app" ]]; then
   echo "${bold}Setting Solarized theme on iTerm2...${unbold}"
 
-  # If first time running this script; most likely, iTerm is not installed.
-  # Create DynamicProfiles folder
-  # if [ ! -d "~/Library/Application\ Support/iTerm2" ]; then  
-    # mkdir ~/Library/Application\ Support/iTerm2
-    # mkdir ~/Library/Application\ Support/iTerm2/DynamicProfiles/
-  # else
-    # echo "hello"
-  # fi
-
   # Copy "ALL" profiles JSON to Dynamic profiles
   # If I ever want to update the "ANY" profile, go to Profiles > Actions > Export ALL Profiles
   # Ref: https://stackoverflow.com/a/56821180
@@ -72,18 +63,9 @@ cp -r fonts/. ~/Library/Fonts/
 # Install Oh-My-Zsh
 if [ ! -d "~/.oh-my-zsh" ]; then
   echo "${bold}Installing Oh-My-Zsh...${unbold}"
-  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 else
   echo "Oh My ZSH is already installed."
-fi
-
-# Install Powerline Theme
-if [ ! ~/.oh-my-zsh/custom/themes/powerlevel9k ]; then
-  echo "${bold}Installing Powerline Theme...${unbold}"
-  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-  # echo 'source ~/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme'  >> ~/.zshrc # already added it to zshrc
-else
-  echo "${bold}Powerline already installed.${unbold}"
 fi
 
 # Fix ZSH folder permissions
