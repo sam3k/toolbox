@@ -38,7 +38,7 @@ fi
 
 # Copy Fonts
 echo "${bold}Copying fonts...${unbold}"
-cp -rf fonts/. ~/Library/Fonts/
+cp -r fonts/. ~/Library/Fonts/
 
 
 
@@ -81,7 +81,7 @@ fi
 if [ ! ~/.oh-my-zsh/custom/themes/powerlevel9k ]; then
   echo "${bold}Installing Powerline Theme...${unbold}"
   git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-  echo 'source ~/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme'  >> ~/.zshrc
+  # echo 'source ~/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme'  >> ~/.zshrc # already added it to zshrc
 else
   echo "${bold}Powerline already installed.${unbold}"
 fi
